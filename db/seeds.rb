@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Blogpost.destroy_all
 
     user1 = User.create!(
         {first_name: 'Sydney', last_name: 'Chase', user_name: 'Indi', email: 'theindigoroom2@gmail.com'}
@@ -21,6 +22,18 @@ User.destroy_all
         {first_name: 'Yvonne', last_name: 'Gist', user_name: 'Vonnie', email: 'vonie@emailexample.com'}
         )
 
+blogpost1 = Blogpost.create!(
+    {title: 'Keep on Moving', content: 'Sometimes you may feel like nothing is working and you just want to give up. Don"t! Keep on Moving toward"s your goal.', img_url: 'https://sydneychase.files.wordpress.com/2012/04/steven-flying.jpg', user_id: user1.id}
+)
+blogpost2 = Blogpost.create!(
+    {title: 'Meditation is My Number One', content: 'I started out meditating for just 5 minutes each day. And I found that helped me. As I got better at it, I increased the time each day by 5 minutes. Now 5 years later I can meditate for one hour at a time!', img_url: 'https://sydneychase.files.wordpress.com/2015/03/meditation-1.jpg', user_id: user2.id}
+)
+blogpost3 = Blogpost.create!(
+    {title: 'The Only Constant is Change!', content: 'You can remain stubborn, stuck in your ways and resistant to change. I used to be like that. I chose a different path a long time ago. Change is good. ', img_url: 'https://sydneychase.files.wordpress.com/2015/03/740b5598d602be7c8f6fd162391aa1b7.jpg', user_id: user4.id}
+)
+blogpost4 = Blogpost.create!(
+    {title: 'Energy Crisis Looming', content: 'Sometimes you have to pay attention to what is going on around you. There is an energy crisis creeping upon us and no one I know is paying attention. How are you going to stay warm this winter? Do you know how to stay warm should we have another energy gridlock? Check out all of my blogs for helpful tips on traversing the loss of power. As we say in the North, Winter is coming. Are you ready?', img_url: 'https://sydneychase.files.wordpress.com/2012/04/lightening_1.png', user_id: user3.id}
+)
 
 
 
