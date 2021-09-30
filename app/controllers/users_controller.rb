@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     # GET /users
   def index
     users = User.all
-    render json: users, only: [:first_name, :user_name]
+    render json: users, only: [:first_name, :user_name], include: :blogposts
   end
   
 

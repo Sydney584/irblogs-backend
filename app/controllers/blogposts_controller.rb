@@ -3,7 +3,7 @@ class BlogpostsController < ApplicationController
      # GET /blogposts
   def index
     blogposts = Blogpost.all
-    render json: blogposts
+    render json: blogposts, include: :comments
   end
 
 # GET /blogposts/:id
