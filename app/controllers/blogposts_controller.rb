@@ -10,7 +10,7 @@ class BlogpostsController < ApplicationController
 def show
     blogpost = Blogpost.find_by(id: params[:id])
     if blogpost
-      render json: blogpost
+      render json: blogpost, include: :user
     else
       render json: { error: "Blogpost not found" }, status: :not_found
     end
