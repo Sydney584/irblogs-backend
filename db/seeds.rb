@@ -8,6 +8,7 @@
 
 User.destroy_all
 Blogpost.destroy_all
+Comment.destroy_all
 
     user1 = User.create!(
         {first_name: 'Sydney', last_name: 'Chase', user_name: 'Indi', email: 'theindigoroom2@gmail.com'}
@@ -52,6 +53,6 @@ comment = Comment.create!(
 )
 
 
-puts "User & Et all seeded"
+puts "User, Blogpost, Comment & Et all seeded"
 
 puts "Seeded"
