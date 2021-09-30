@@ -35,6 +35,21 @@ blogpost4 = Blogpost.create!(
     {title: 'Energy Crisis Looming', content: 'Sometimes you have to pay attention to what is going on around you. There is an energy crisis creeping upon us and no one I know is paying attention. How are you going to stay warm this winter? Do you know how to stay warm should we have another energy gridlock? Check out all of my blogs for helpful tips on traversing the loss of power. As we say in the North, Winter is coming. Are you ready?', img_url: 'https://sydneychase.files.wordpress.com/2012/04/lightening_1.png', user_id: user3.id}
 )
 
+comment1 = Comment.create!(
+    {content: 'I really get what you are saying. It is true sometimes things have to fall apart to come back together. Like that song, Keep on Moving. I love that song.', blogpost_id: blogpost1.id, user_id: user1.id}
+)
+comment2 = Comment.create!(
+    {content: 'Sometimes I get tired of moving so much lol!', blogpost_id: blogpost1.id, user_id: user2.id}
+)
+comment3 = Comment.create!(
+    {content: 'Sometimes you should stop and smell the roses just allow yourself to breath, smell the roses of course. And then keep going!', blogpost_id: blogpost1.id, user_id: user1.id}
+)
+comment4 = Comment.create!(
+    {content: 'Ugh meditating is so hard for me. I always fall asleep!', blogpost_id: blogpost2.id, user_id: user3.id}
+)
+comment = Comment.create!(
+    {content: 'I really think we are in for a hell of a Winter this year!!!', blogpost_id: blogpost4.id, user_id: user4.id}
+)
 
 
 puts "User & Et all seeded"
