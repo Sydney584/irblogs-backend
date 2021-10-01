@@ -17,6 +17,26 @@ def show
     
     end
 
+    # Post/blogpost/:id
+def create
+  blogpost = Blogpost.create!(blogpost_params)
+  render json: blogpost, status: :created
+end
+
+# PUT /blogpost/:id
+def update
+  blogpost = Blogpost.find_by(id: params[:id])
+  blogpost.update(blogpost_params)
+  render json: blogpost
+end
+
+ # DELETE /blogposts/:id
+ def destroy
+  blogpost = Blogpost.find_by(id: params[:id])
+  blogpost.destroy
+  head :no_content
+end
+
     
 
   private
