@@ -33,6 +33,13 @@ def update
   render json: user
 end
 
+ # DELETE /users/:id
+ def destroy
+  user = User.find_by(id: params[:id])
+  user.destroy
+  head :no_content
+end
+
 
 private
 
