@@ -9,16 +9,15 @@ class BlogpostsController < ApplicationController
     render json: blogposts, include: :comments
   end
 
+  
 # GET /blogposts/:id
 def show
     blogpost = Blogpost.find_by(id: params[:id])
-    if blogpost
-      render json: blogpost, include: :user
-    else
-      render json: { error: "Blogpost not found" }, status: :not_found
+      render json: blogpost, methods: [:summary], include: [:user, :comments]
+    
     end
-  end
 
+    
 
   private
 
@@ -29,5 +28,6 @@ def show
   def render_unprocessable_entity_response(invalid)
     render json: { errors: invalid.record.errors }, status: :unprocessable_entity
   end
+
 
 end

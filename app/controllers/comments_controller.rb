@@ -9,6 +9,11 @@ class CommentsController < ApplicationController
     render json: comments 
   end
 
+  def show
+    comment = Comment.find_by(id: params[:id])
+      render json: comment, include: [:blogpost, :user]
+  end
+
   private
 
   def render_not_found_response

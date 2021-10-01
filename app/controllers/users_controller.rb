@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
     # GET /users
   def index
-    users = User.all
+    users = if params[:name]
+      User.by_name(params[:name])
+      else
+        User.all
+      end
     render json: users, only: [:first_name, :user_name]
   end
   
@@ -13,7 +17,7 @@ class UsersController < ApplicationController
 # GET /users/:id
 def show
   user = User.find(params[:id])
-  render json: user, include: :blogposts
+  render json: user
 end
 
 
