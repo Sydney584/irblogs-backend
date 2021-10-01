@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :comments
   resources :blogposts, only: [:index, :show]
-  resources :users, only: [:index, :show, :create]
+  resources :users, only: [:index, :show, :create, :update]
   
   
   # get '/blogposts/comments', to: 'bloposts#comments'

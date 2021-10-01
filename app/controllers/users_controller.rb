@@ -26,6 +26,13 @@ def create
   render json: user, status: :created
 end
 
+# PUT /users/:id
+def update
+  user = User.find_by(id: params[:id])
+  user.update(user_params)
+  render json: user
+end
+
 
 private
 
