@@ -5,11 +5,7 @@ class UsersController < ApplicationController
 
     # GET /users
   def index
-    users = if params[:name]
-      User.by_name(params[:name])
-      else
-        User.all
-      end
+    users = User.all
     render json: users, only: [:first_name, :user_name]
   end
   
