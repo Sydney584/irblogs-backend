@@ -18,7 +18,7 @@ end
 
 # Post/users/:id
 def create
-  user = User.create(user_params)
+  user = User.create!(user_params)
   render json: user, status: :created
 end
 
