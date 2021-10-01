@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :blogposts, only: [:index, :show]
+  resources :comments, only: [:create, :update, :destroy]
+  resources :blogposts, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:index, :show, :create, :update, :destroy]
   
   
